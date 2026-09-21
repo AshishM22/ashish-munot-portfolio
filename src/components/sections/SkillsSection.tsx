@@ -68,10 +68,13 @@ export function SkillsSection() {
   return (
     <section id="skills" className="bg-[#faf7f2] border-b border-stone-200/80 py-16 sm:py-20 lg:py-28 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionBadge label="TECH STACK" />
+        <SectionBadge label="PLATFORM" />
         <h2 className="text-[28px] sm:text-3xl lg:text-[40px] font-extrabold tracking-[-0.025em] text-slate-950 leading-[1.2] max-w-2xl break-words">
-          Tools I use to ship reliable software.
+          Proven tools behind secure, affordable systems.
         </h2>
+        <p className="mt-3 text-base text-slate-600 max-w-2xl leading-[1.65]">
+          The stack is chosen to last: widely supported, easy to host, and straightforward for your team to inherit.
+        </p>
 
         <div className="mt-8 flex flex-wrap gap-2">
           {categories.map((category) => {
@@ -97,7 +100,7 @@ export function SkillsSection() {
           {skills[active].map((skill) => (
             <div
               key={skill.name}
-              className="p-4 sm:p-6 rounded-2xl bg-white border border-stone-200 shadow-sm hover:shadow-md transition-all flex flex-col min-w-0"
+              className="p-4 sm:p-6 rounded-2xl bg-white border border-stone-200 shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-emerald-200 transition-all duration-200 flex flex-col min-w-0"
             >
               <IconBadge icon={skill.icon} />
               <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight break-words">{skill.name}</h3>

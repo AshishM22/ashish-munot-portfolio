@@ -1,14 +1,13 @@
-import { Code2, Download, Menu, X } from 'lucide-react';
+import { Code2, Download, Menu, ShieldCheck, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import type { NavLinkItem } from '../../types';
-import { PrimaryButton } from '../ui/PrimaryButton';
 import { SecondaryButton } from '../ui/SecondaryButton';
 
 const links: NavLinkItem[] = [
   { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Experience', href: '#experience' },
+  { label: 'Services', href: '#services' },
+  { label: 'Work', href: '#projects' },
+  { label: 'Approach', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -31,54 +30,64 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <nav className="sticky top-0 z-50 w-full max-w-[100vw] bg-[#fcfbf9]/95 backdrop-blur-md border-b border-stone-200/80 transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-3">
-          <a href="#hero" className="flex min-w-0 items-center space-x-2 sm:space-x-3 select-none">
-            <div className="w-9 h-9 shrink-0 rounded-xl bg-slate-950 flex items-center justify-center">
-              <Code2 className="w-4 h-4 text-emerald-400" />
-            </div>
-            <span className="font-bold text-slate-950 tracking-tight truncate">Ashish M</span>
-            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
-          </a>
-
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-[14px] font-medium text-slate-600 hover:text-slate-950 transition-all duration-150"
-              >
-                {link.label}
-              </a>
-            ))}
+    <nav className="sticky top-0 z-50 w-full max-w-[100vw] nav-glass transition-all">
+      <div className="flex h-16 items-center justify-between gap-3">
+        <a
+          href="#hero"
+          className="flex min-w-0 items-center gap-2 sm:gap-3 pl-4 sm:pl-6 lg:pl-8 shrink-0 select-none"
+        >
+          <div className="w-9 h-9 shrink-0 rounded-xl bg-gradient-to-br from-slate-950 to-slate-800 flex items-center justify-center shadow-md shadow-slate-900/25 ring-1 ring-white/10">
+            <Code2 className="w-4 h-4 text-emerald-400" />
           </div>
+          <span className="min-w-0">
+            <span className="block font-bold text-slate-950 tracking-tight leading-tight truncate">Ashish Munot</span>
+            <span className="hidden sm:block text-[10px] font-medium text-slate-500 tracking-wide">
+              Technology partner
+            </span>
+          </span>
+        </a>
 
-          <div className="hidden lg:flex items-center space-x-3 shrink-0">
-            <SecondaryButton href="/Ashish_M_CV.txt" download className="px-5 py-2.5 text-sm">
-              <Download className="w-4 h-4 mr-2" />
-              Download CV
-            </SecondaryButton>
-            <PrimaryButton href="#contact" className="px-5 py-2.5 text-sm">
-              Hire Me
-            </PrimaryButton>
-          </div>
-
-          <button
-            type="button"
-            aria-expanded={open}
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            onClick={() => setOpen((value) => !value)}
-            className="lg:hidden p-2.5 min-h-11 min-w-11 rounded-xl bg-white border border-stone-200 text-slate-800 shadow-sm transition-all duration-150 active:scale-[0.98] flex items-center justify-center"
-          >
-            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
+        <div className="hidden lg:flex flex-1 items-center justify-center space-x-6 xl:space-x-8">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-[14px] font-medium text-slate-600 hover:text-emerald-800 transition-colors duration-200 relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-emerald-500 after:transition-all hover:after:w-full"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
+
+        <div className="hidden lg:flex items-center gap-3 pr-4 sm:pr-6 lg:pr-8 shrink-0">
+          <span className="hidden xl:inline-flex items-center gap-1.5 text-[12px] font-medium text-slate-600">
+            <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            Security-first delivery
+          </span>
+          <a
+            href="/Ashish_Munot_Resume.pdf"
+            download
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-[13px] font-semibold text-slate-800 bg-white border border-stone-200/80 shadow-sm hover:shadow-md hover:border-emerald-300 hover:text-emerald-900 transition-all duration-200"
+          >
+            <Download className="w-4 h-4 text-emerald-600" />
+            CV
+          </a>
+        </div>
+
+        <button
+          type="button"
+          aria-expanded={open}
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          onClick={() => setOpen((value) => !value)}
+          className="lg:hidden mr-4 sm:mr-6 p-2.5 min-h-11 min-w-11 rounded-xl bg-white border border-stone-200 text-slate-800 shadow-sm transition-all duration-150 active:scale-[0.98] flex items-center justify-center"
+        >
+          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
       </div>
 
       {open && (
         <div className="lg:hidden border-t border-stone-200/80 bg-[#fcfbf9] max-h-[calc(100dvh-4rem)] overflow-y-auto">
-          <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col space-y-1">
+          <div className="px-4 sm:px-6 py-4 flex flex-col space-y-1">
             {links.map((link) => (
               <a
                 key={link.href}
@@ -89,13 +98,11 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
-            <div className="pt-3 flex flex-col space-y-2">
-              <SecondaryButton href="/Ashish_M_CV.txt" download className="w-full">
+            <div className="pt-3">
+              <SecondaryButton href="/Ashish_Munot_Resume.pdf" download className="w-full text-sm">
+                <Download className="w-4 h-4 mr-2" />
                 Download CV
               </SecondaryButton>
-              <PrimaryButton href="#contact" onClick={() => setOpen(false)} className="w-full">
-                Hire Me
-              </PrimaryButton>
             </div>
           </div>
         </div>

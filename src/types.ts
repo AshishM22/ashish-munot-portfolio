@@ -17,6 +17,7 @@ export interface PrimaryButtonProps {
   type?: 'button' | 'submit';
   onClick?: () => void;
   className?: string;
+  disabled?: boolean;
 }
 
 export interface SecondaryButtonProps {
@@ -34,9 +35,15 @@ export interface SkillItem {
   icon: LucideIcon;
 }
 
+export interface ServiceItem {
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}
+
 export type SkillCategory = 'Frontend' | 'Backend' | 'Tools & DevOps' | 'Languages';
 
-export type ProjectCategory = 'All' | 'Web App' | 'Mobile' | 'Open Source';
+export type ProjectCategory = 'All' | 'Customer systems' | 'Operations' | 'Platforms';
 
 export interface ProjectItem {
   title: string;
@@ -46,6 +53,8 @@ export interface ProjectItem {
   liveUrl: string;
   githubUrl: string;
   bannerLabel: string;
+  result: string;
+  accent: string;
 }
 
 export interface ExperienceItem {
@@ -59,6 +68,7 @@ export interface TestimonialItem {
   quote: string;
   name: string;
   title: string;
+  initials: string;
 }
 
 export interface ContactFormState {

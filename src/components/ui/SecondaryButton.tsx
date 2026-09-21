@@ -12,7 +12,7 @@ export function SecondaryButton({
       href={href}
       download={download || undefined}
       onClick={onClick}
-      className={`px-6 sm:px-7 py-3.5 rounded-xl bg-white hover:bg-stone-50 border border-stone-300 text-slate-800 font-semibold text-[15px] tracking-[-0.01em] transition-all duration-150 shadow-sm hover:border-stone-400 inline-flex items-center justify-center min-h-11 ${className}`}
+      className={`px-6 sm:px-7 py-3.5 rounded-xl bg-white/90 hover:bg-white border border-stone-200 text-slate-800 font-semibold text-[15px] tracking-[-0.01em] transition-all duration-300 shadow-sm hover:shadow-md hover:border-emerald-200 hover:text-emerald-900 inline-flex items-center justify-center min-h-11 backdrop-blur-sm ${className}`}
     >
       {children}
     </a>

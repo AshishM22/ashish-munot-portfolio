@@ -1,100 +1,113 @@
+import { Lock, ShieldCheck, Sparkles, Workflow } from 'lucide-react';
 import { PrimaryButton } from '../ui/PrimaryButton';
 import { SecondaryButton } from '../ui/SecondaryButton';
 import { SectionBadge } from '../ui/SectionBadge';
 
 const codeLines = [
-  { prefix: '$', text: 'whoami', color: 'text-emerald-300' },
-  { prefix: '›', text: 'Ashish M — Full-Stack Developer', color: 'text-emerald-400' },
-  { prefix: '$', text: 'stack --show', color: 'text-emerald-300' },
-  { prefix: '›', text: 'React · Node.js · TypeScript', color: 'text-emerald-400' },
-  { prefix: '›', text: 'PostgreSQL · AWS · Vite', color: 'text-emerald-400' },
-  { prefix: '$', text: 'status', color: 'text-emerald-300' },
-  { prefix: '›', text: 'Available for new opportunities', color: 'text-emerald-400' },
+  { prefix: '01', text: 'Discover business workflows', color: 'text-stone-400' },
+  { prefix: '02', text: 'Design systems, access, and data', color: 'text-emerald-300' },
+  { prefix: '03', text: 'Build web, APIs, and cloud', color: 'text-emerald-400 font-medium' },
+  { prefix: '04', text: 'Harden security and backups', color: 'text-emerald-300' },
+  { prefix: '05', text: 'Launch, train, and support', color: 'text-stone-300' },
 ];
 
 const stats = [
-  { value: '5+', label: 'Years Exp' },
-  { value: '30+', label: 'Projects' },
-  { value: '10+', label: 'Clients' },
+  { value: 'One partner', label: 'From idea to operations' },
+  { value: 'Secure', label: 'Access, data, and cloud' },
+  { value: 'Clear cost', label: 'No surprise retainers' },
 ];
 
 export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden bg-[#faf7f2] border-b border-stone-200/80 py-16 sm:py-20 lg:py-28 scroll-mt-20"
+      className="relative overflow-hidden border-b border-stone-200/60 py-16 sm:py-20 lg:py-28 scroll-mt-20"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(#e5e0d8_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none select-none" />
-      <div className="absolute top-0 right-1/4 w-[min(550px,90vw)] h-[380px] rounded-full bg-amber-200/35 blur-[80px] sm:blur-[120px] pointer-events-none select-none" />
-      <div className="absolute top-20 left-1/4 w-[min(550px,90vw)] h-[380px] rounded-full bg-orange-200/30 blur-[80px] sm:blur-[120px] pointer-events-none select-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#d6d0c4_1px,transparent_1px)] [background-size:28px_28px] opacity-40 pointer-events-none select-none" />
+      <div className="absolute -top-20 right-0 w-[min(600px,95vw)] h-[420px] rounded-full bg-gradient-to-br from-amber-200/50 to-orange-100/30 blur-[100px] pointer-events-none animate-glow-pulse" />
+      <div className="absolute top-32 -left-20 w-[min(500px,90vw)] h-[360px] rounded-full bg-gradient-to-tr from-emerald-200/60 to-teal-100/40 blur-[90px] pointer-events-none animate-glow-pulse" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-emerald-300/50 to-transparent pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div className="min-w-0">
-            <SectionBadge label="FULL-STACK DEVELOPER" />
-            <h1 className="text-[30px] sm:text-[40px] lg:text-[52px] font-extrabold tracking-[-0.03em] text-slate-950 leading-[1.12] break-words">
-              Building Products that{' '}
-              <span className="relative inline">
-                <span className="relative z-10 text-emerald-700">Scale and Matter</span>
-                <svg
-                  className="absolute -bottom-1 sm:-bottom-2.5 left-0 w-full h-2.5 sm:h-3 text-emerald-500/40 pointer-events-none"
-                  viewBox="0 0 250 12"
-                  fill="none"
-                  preserveAspectRatio="none"
-                >
-                  <path d="M3 9C60 2 180 2 247 8" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
-                </svg>
-              </span>
+          <div className="min-w-0 animate-fade-up">
+            <SectionBadge label="SMB & ENTERPRISE TECHNOLOGY" icon={Sparkles} />
+            <h1 className="text-[30px] sm:text-[42px] lg:text-[52px] font-extrabold tracking-[-0.035em] text-slate-950 leading-[1.1] break-words">
+              End-to-end technology for your business —{' '}
+              <span className="text-gradient">without the IT stress</span>
             </h1>
-            <p className="mt-6 text-base text-slate-600 leading-[1.65] max-w-xl">
-              I design and ship reliable web products with React, Node.js, TypeScript, PostgreSQL, and AWS — from
-              polished interfaces to production APIs that stay fast under load.
-            </p>
-            <p className="mt-3 text-base text-slate-600 leading-[1.65] max-w-xl">
-              Currently open to product teams who care about craft, clarity, and shipping things that people actually use.
+            <p className="mt-6 text-base sm:text-lg text-slate-600 leading-[1.75] max-w-xl">
+              Most companies do not need another brochure website. They need systems that take orders, manage people,
+              protect data, and stay online — at a cost that makes sense. I own that stack from first conversation to
+              production and support.
             </p>
 
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                { icon: Workflow, title: 'End to end', text: 'Design, build, host, train, maintain.' },
+                { icon: ShieldCheck, title: 'Security first', text: 'Access control, encryption, backups.' },
+                { icon: Lock, title: 'You stay in charge', text: 'Clear scope. You keep the keys.' },
+              ].map(({ icon: Icon, title, text }) => (
+                <div
+                  key={title}
+                  className="surface-card p-4 group"
+                >
+                  <div className="icon-tile w-10 h-10 mb-3 group-hover:scale-105 transition-transform duration-300">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <p className="font-bold text-slate-900 tracking-tight">{title}</p>
+                  <p className="mt-1 text-sm text-slate-600 leading-snug">{text}</p>
+                </div>
+              ))}
+            </div>
+
             <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3">
-              <PrimaryButton href="#projects" className="w-full sm:w-auto">
-                View My Work
+              <PrimaryButton href="#contact" className="w-full sm:w-auto">
+                Discuss your requirements
               </PrimaryButton>
-              <SecondaryButton href="/Ashish_M_CV.txt" download className="w-full sm:w-auto">
-                Download CV
+              <SecondaryButton href="#services" className="w-full sm:w-auto">
+                See how delivery works
               </SecondaryButton>
             </div>
 
-            <div className="mt-10 grid grid-cols-3 gap-3 sm:flex sm:flex-wrap sm:gap-8">
+            <div className="mt-10 pt-8 border-t border-stone-200/80 grid grid-cols-3 gap-4">
               {stats.map((stat) => (
-                <div key={stat.label} className="pl-3 sm:pl-4 border-l-2 border-emerald-500 min-w-0">
-                  <p className="text-base sm:text-lg font-bold text-slate-900 tracking-tight">{stat.value}</p>
-                  <p className="text-[10px] sm:text-[11px] font-mono font-bold tracking-wider text-slate-600 uppercase">
-                    {stat.label}
-                  </p>
+                <div key={stat.label} className="min-w-0">
+                  <p className="text-sm sm:text-base font-extrabold text-slate-950 tracking-tight">{stat.value}</p>
+                  <p className="mt-1 text-[10px] sm:text-[11px] font-medium text-slate-500 leading-snug">{stat.label}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="select-none min-w-0">
-            <div className="p-1 rounded-2xl bg-slate-950 shadow-md overflow-hidden">
-              <div className="flex items-center space-x-2 px-3 sm:px-4 py-3 border-b border-white/10 min-w-0">
-                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-red-400/80" />
-                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-300/80" />
-                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400/80" />
-                <span className="ml-2 sm:ml-3 text-[10px] sm:text-[11px] font-mono font-bold tracking-wider text-slate-400 uppercase truncate">
-                  ashish@portfolio — zsh
-                </span>
-              </div>
-              <div className="p-4 sm:p-5 font-mono text-[13px] sm:text-sm leading-6 sm:leading-7 overflow-x-auto">
-                {codeLines.map((line, index) => (
-                  <p key={`${line.text}-${index}`} className={`${line.color} break-words`}>
-                    <span className="text-slate-500 mr-2">{line.prefix}</span>
-                    {line.text}
-                    {index === codeLines.length - 1 && (
-                      <span className="inline-block w-2 h-4 ml-1 align-middle bg-emerald-400 animate-pulse" />
-                    )}
-                  </p>
-                ))}
+          <div className="relative select-none min-w-0 animate-fade-up [animation-delay:150ms]">
+            <div className="absolute -inset-4 bg-gradient-to-br from-emerald-400/20 via-transparent to-amber-300/20 rounded-3xl blur-2xl animate-glow-pulse pointer-events-none" />
+            <div className="relative animate-float-slow">
+              <div className="p-[1px] rounded-2xl bg-gradient-to-br from-emerald-400/60 via-slate-700 to-amber-400/40 shadow-glow overflow-hidden">
+                <div className="rounded-2xl bg-slate-950 overflow-hidden">
+                  <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-white/[0.03] min-w-0">
+                    <span className="text-[10px] sm:text-[11px] font-mono font-bold tracking-wider text-slate-400 uppercase truncate">
+                      Delivery model
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-[10px] font-mono font-bold tracking-wider text-emerald-400 uppercase">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      Secure by default
+                    </span>
+                  </div>
+                  <div className="p-5 sm:p-6 space-y-4 bg-gradient-to-b from-slate-950 to-slate-900">
+                    {codeLines.map((line) => (
+                      <div key={line.text} className="flex items-start gap-3">
+                        <span className="font-mono text-[11px] text-emerald-600/80 mt-0.5">{line.prefix}</span>
+                        <p className={`${line.color} text-sm sm:text-[15px] leading-snug`}>{line.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="px-5 sm:px-6 py-4 border-t border-white/10 bg-gradient-to-r from-emerald-950/40 to-slate-950">
+                    <p className="text-[12px] text-stone-300 leading-relaxed">
+                      One accountable partner. No juggling a designer, a developer, a host, and a security vendor.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

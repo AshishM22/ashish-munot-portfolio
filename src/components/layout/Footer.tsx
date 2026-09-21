@@ -21,10 +21,12 @@ export function Footer() {
             <div className="w-8 h-8 rounded-xl bg-slate-950 flex items-center justify-center">
               <Code2 className="w-4 h-4 text-emerald-400" />
             </div>
-            <span className="font-bold text-slate-950">Ashish M</span>
+            <span className="font-bold text-slate-950">Ashish Munot</span>
           </a>
 
-          <p className="text-sm text-slate-500">© {new Date().getFullYear()} Ashish M. All rights reserved.</p>
+          <p className="text-sm text-slate-500 text-center">
+            © {new Date().getFullYear()} Ashish Munot. End-to-end technology for business.
+          </p>
 
           <div className="flex items-center space-x-2">
             {socials.map(({ href, label, icon: Icon }) => (

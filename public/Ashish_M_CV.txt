@@ -1,7 +1,0 @@
-Ashish M
-Full-Stack Developer
-
-Stack: React, Node.js, TypeScript, PostgreSQL, AWS
-Experience: 5+ years building product-ready web applications
-
-This is a placeholder CV file for the portfolio demo. Replace it with your real resume PDF.
